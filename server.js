@@ -25,11 +25,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // developing
-// app.use(
-//   cors({
-//     options: ["http://localhost:3000/"],
-//   })
-// );
+app.use(
+  cors({
+    options: ["http://localhost:3000/"],
+  })
+);
 
 // deployed site
 // app.use(
