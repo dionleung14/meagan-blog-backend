@@ -58,22 +58,22 @@ app.use(express.static("public"));
 //   },
 // ];
 
+app.listen(PORT, () => {
+  console.log(`App is listening on port ${PORT}`);
+});
+
 app.get("/", (req, res) => {
   res.send(
     `This backend will have all blog posts. My favorite pokemon is ${process.env.POKEMON}`
   );
 });
 
-app.listen(PORT, () => {
-  console.log(`App is listening on port ${PORT}`);
-});
-
 app.get("/all", (req, res) => {
   db.Blog.find({}, (err, found) => {
-    try {
-      res.status(200).json(found);
-    } catch (err) {
+    if (err) {
       res.status(500).send("error?");
+    } else {
+      res.status(200).json(found);
     }
   });
 });

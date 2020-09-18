@@ -11,8 +11,8 @@ const BlogSchema = new Schema({
     type: String,
   },
   userCreated: {
-    type: Date,
-    default: Date.now(),
+    type: String,
+    default: Date.now().toString(),
   },
 });
 
