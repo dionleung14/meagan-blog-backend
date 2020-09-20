@@ -10,8 +10,11 @@ const BlogSchema = new Schema({
   body: {
     type: String,
   },
+  category: {
+    type: String,
+  },
   userCreated: {
-    type: Date,
+    type: String,
     default: Date.now(),
   },
 });
