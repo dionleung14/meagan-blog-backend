@@ -7,15 +7,36 @@ const BlogSchema = new Schema({
     type: String,
     required: true,
   },
-  body: {
+  bodyOne: {
     type: String,
   },
+  bodyTwo: {
+    type: String,
+  },
+  bodyThree: {
+    type: String,
+  },
+  bodyFour: {
+    type: String,
+  },
+  imageOne: {
+    type: String,
+  },
+  // imageTwo: {
+  //   type: String,
+  // },
+  // imageThree: {
+  //   type: String,
+  // },
+  // imageFour: {
+  //   type: String,
+  // },
   category: {
     type: String,
   },
   userCreated: {
     type: String,
-    default: Date.now(),
+    default: Date.now().toString(),
   },
 });
 
