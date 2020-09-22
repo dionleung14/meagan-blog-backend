@@ -62,12 +62,14 @@ app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}`);
 });
 
+// Default home page of server
 app.get("/", (req, res) => {
   res.send(
     `This backend will have all blog posts. My favorite pokemon is ${process.env.POKEMON}`
   );
 });
 
+// Retrieve all blogs from database
 app.get("/all", (req, res) => {
   db.Blog.find({}, (err, found) => {
     if (err) {
@@ -78,6 +80,7 @@ app.get("/all", (req, res) => {
   });
 });
 
+// Retrieve one blog from database given the id of the blog
 app.get("/blog/:id", (req, res) => {
   db.Blog.findOne({ _id: req.params.id }, (err, found) => {
     if (err) {
@@ -88,6 +91,7 @@ app.get("/blog/:id", (req, res) => {
   });
 });
 
+// Deletes a blog from database given the id of the blog
 app.delete("/blog/:id", (req, res) => {
   db.Blog.deleteOne({ _id: req.params.id }, (err, found) => {
     if (err) {
@@ -98,6 +102,7 @@ app.delete("/blog/:id", (req, res) => {
   });
 });
 
+// Creates a new blog in the database
 app.post("/blog", (req, res) => {
   // res.send(req.body);
   db.Blog.create(req.body)
@@ -109,3 +114,8 @@ app.post("/blog", (req, res) => {
     });
   // res.status(200).send("you wanted to post to me?");
 });
+
+// Gets the most recent photo from cloudinary
+// app.get("/recentphoto", (req, res) => {
+//   const getImage = await Image.findOne().sort({ _id})
+// })
