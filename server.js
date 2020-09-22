@@ -107,7 +107,6 @@ app.post("/blog", (req, res) => {
   // res.send(req.body);
   db.Blog.create(req.body)
     .then((dbBlog) => {
-      console.log(dbBlog);
       res.json(dbBlog);
     })
     .catch((err) => {
