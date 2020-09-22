@@ -19,16 +19,16 @@ const BlogSchema = new Schema({
   bodyFour: {
     type: String,
   },
-  imageOne: {
+  imageOneURL: {
     type: String,
   },
-  // imageTwo: {
+  // imageTwoURL: {
   //   type: String,
   // },
-  // imageThree: {
+  // imageThreeURL: {
   //   type: String,
   // },
-  // imageFour: {
+  // imageFourURL: {
   //   type: String,
   // },
   category: {
