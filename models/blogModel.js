@@ -22,21 +22,21 @@ const BlogSchema = new Schema({
   imageOneURL: {
     type: String,
   },
-  // imageTwoURL: {
-  //   type: String,
-  // },
-  // imageThreeURL: {
-  //   type: String,
-  // },
-  // imageFourURL: {
-  //   type: String,
-  // },
+  imageTwoURL: {
+    type: String,
+  },
+  imageThreeURL: {
+    type: String,
+  },
+  imageFourURL: {
+    type: String,
+  },
   category: {
     type: String,
   },
   userCreated: {
     type: String,
-    default: Date.now(),
+    default: Date.now().toString(),
   },
 });
 
