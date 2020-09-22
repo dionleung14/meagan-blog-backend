@@ -88,6 +88,16 @@ app.get("/blog/:id", (req, res) => {
   });
 });
 
+app.delete("/blog/:id", (req, res) => {
+  db.Blog.deleteOne({ _id: req.params.id }, (err, found) => {
+    if (err) {
+      res.status(500).send("error?");
+    } else {
+      res.status(200).json(found);
+    }
+  });
+});
+
 app.post("/blog", (req, res) => {
   // res.send(req.body);
   db.Blog.create(req.body)
