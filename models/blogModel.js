@@ -7,6 +7,9 @@ const BlogSchema = new Schema({
     type: String,
     required: true,
   },
+  tags: {
+    type: Array,
+  },
   bodyOne: {
     type: String,
   },
@@ -36,7 +39,7 @@ const BlogSchema = new Schema({
   },
   userCreated: {
     type: Number,
-    default: Date.now().toString(),
+    default: Date.now(),
   },
 });
 
